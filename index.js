@@ -1,22 +1,21 @@
-/* // getElementById
+/* 
+            querySelector()
+            querySelectorAll()
 
-var myHeading = document.getElementById("heading-1");
-myHeading.innerHTML = "Hello";
+Usage:
+            tag-name
+            #id-name
+            .class-name
+*/
+/* 
+document.querySelector("#pid").innerHTML = "Changed";
 
-var myHeading2 = document.getElementById("heading-2");
-myHeading2.innerHTML = "Hello Boy";
+document.querySelector(".heading").innerHTML = "Query Selector used"; // return first heading class
 
-var paragrap1 = document.getElementById("p-1");
-paragrap1.innerHTML = "lorem";
- */
+document.querySelectorAll(".heading")[0].innerHTML = "querySelectorAll(0)";
+document.querySelectorAll(".heading")[1].innerHTML = "querySelectorAll(1)";
+document.querySelectorAll(".heading")[2].innerHTML = "querySelectorAll(2)"; */
 
-/* // getElementsByTagName
-
-var headings = document.getElementsByTagName("h1");
-headings[0].innerHTML = "heading 0";
-headings[1].innerHTML = "heading 1"; */
-
-// getElementsByClassName
-var headingsByClassName = document.getElementsByClassName("heading");
-headingsByClassName[0].innerHTML = "Class 0";
-headingsByClassName[1].innerHTML = "Class 1";
+document.querySelector("a").innerHTML = "Changed Home";
+document.querySelector("li a").innerHTML = "Changed Tutorial";
+document.querySelector(".my-div a").innerHTML = "Changed Contact";
