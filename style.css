@@ -3,10 +3,10 @@ body {
     margin: 0;
 }
 
-button {
-    width: 100px;
-    padding: 5px;
-    border: indigo solid 2px;
+.container {
+    width: 500px;
+    height = 500px;
+    margin: auto;
 }
 
 .para-style {

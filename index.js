@@ -1,16 +1,62 @@
-// Changing CSS style dynamically
+// addEventSelector on button
 
-function addStyle() {
-    var pTag = document.querySelector("p");
-    console.log('add style');
-/*     pTag.style.color = "red";
-    pTag.style.fontSize = "50px";
-    pTag.style.fontWeight = "bold";
-    pTag.style.fontStyle = "italic"; */
-    pTag.classList.add("para-style");
-}
+/* var myVar = document.querySelector("#button1");
+myVar.addEventListener("click", addImage);
 
-function removeStyle() {
-    var pTag = document.querySelector("p");
-    pTag.classList.remove("para-style");
-}
+var imageDisable = true;
+function addImage() {
+    var imgTag = document.querySelector("img");
+    if (imageDisable == true) {
+        imgTag.src = "assets/sea-bird-1.jpg";
+        imgTag.alt = "Sea Bird";
+        myVar.innerHTML = "Hide Photo";
+    }
+    else {
+        imgTag.src = "#";
+        imgTag.alt = "";
+        myVar.innerHTML = "See Photo";
+    }
+    console.log(imageDisable);
+    imageDisable ^= 1;
+} */
+
+var imageDisable = true;
+document.querySelector("#button1").addEventListener("click", function(){
+    var myVar = document.querySelector("#button1");
+    var imgTag = document.querySelector("img");
+    if (imageDisable == true) {
+        imgTag.src = "assets/sea-bird-1.jpg";
+        imgTag.alt = "Sea Bird";
+        myVar.innerHTML = "Hide Photo";
+    }
+    else {
+        imgTag.src = "#";
+        imgTag.alt = "";
+        myVar.innerHTML = "See Photo";
+    }
+    console.log(imageDisable);
+    imageDisable ^= 1;
+});
+
+// addEventSelector on text
+/* var h1Tag = document.querySelector("h1");
+var isClicked = false;
+h1Tag.addEventListener("click", function() {
+    if (isClicked == false) {
+        h1Tag.classList.add("para-style");
+    }
+    else {
+        h1Tag.classList.remove("para-style");
+    }
+    isClicked ^= true;
+}); */
+
+var h1Tag = document.querySelector("h1");
+
+h1Tag.addEventListener("mouseover", function() {
+    h1Tag.classList.add("para-style");
+});
+
+h1Tag.addEventListener("mouseout", function() {
+    h1Tag.classList.remove("para-style");
+})
