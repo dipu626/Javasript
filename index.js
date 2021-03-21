@@ -1,12 +1,21 @@
-var totalButton = document.querySelectorAll("button").length;
-let allButton = document.querySelectorAll("button");
+let buttons = document.querySelectorAll("button");
 
-var music = ["audio/complete.mp3", "audio/begin.mp3"];
-
-for (var i = 0; i < totalButton; i++) {
-    allButton[i].addEventListener("click", function() {
-        var link = "audio/" + this.innerHTML + ".mp3";
-        var audio = new Audio(link);
-        audio.play();
+for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function(){
+        var text = this.innerHTML;
+        var imgtag = document.querySelector("img");
+        var link = "assets/" + text + ".jpg";
+        imgtag.src = link;
+        imgtag.alt = "photos";
+        console.log(link);
+        addAnimation(text);
     });
+}
+
+function addAnimation(text) {
+    var btn = document.querySelector("." + text);
+    btn.classList.add("anim");
+    setTimeout(function() {
+        btn.classList.remove("anim");
+    }, 2000);
 }
