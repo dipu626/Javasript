@@ -1,19 +1,16 @@
-var photos = ["assets/photo-1.jpg", "assets/photo-2.jpg", "assets/photo-3.jpg", "assets/photo-4.jpg", "assets/photo-5.jpg"];
-var imgTag = document.querySelector("img");
+// Changing CSS style dynamically
 
-var index = 0;
-function prev() {
-    index--;
-    if (index == -1) {
-        index = 4;
-    }
-    imgTag.src = photos[index];
+function addStyle() {
+    var pTag = document.querySelector("p");
+    console.log('add style');
+/*     pTag.style.color = "red";
+    pTag.style.fontSize = "50px";
+    pTag.style.fontWeight = "bold";
+    pTag.style.fontStyle = "italic"; */
+    pTag.classList.add("para-style");
 }
 
-function next() {
-    index++;
-    if (index == photos.length) {
-        index = 0;
-    }
-    imgTag.src = photos[index];
+function removeStyle() {
+    var pTag = document.querySelector("p");
+    pTag.classList.remove("para-style");
 }
