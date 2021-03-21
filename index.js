@@ -1,62 +1,30 @@
-// addEventSelector on button
 
-/* var myVar = document.querySelector("#button1");
-myVar.addEventListener("click", addImage);
+var photos = ["assets/sea-bird-1.jpg", "assets/sea-bird-2.jpg", "assets/photo-1.jpg"];
+var photosName = ["sea-bird 1", "sea-bird 2", "sea -bird 3"];
 
-var imageDisable = true;
-function addImage() {
-    var imgTag = document.querySelector("img");
-    if (imageDisable == true) {
-        imgTag.src = "assets/sea-bird-1.jpg";
-        imgTag.alt = "Sea Bird";
-        myVar.innerHTML = "Hide Photo";
-    }
-    else {
-        imgTag.src = "#";
-        imgTag.alt = "";
-        myVar.innerHTML = "See Photo";
-    }
-    console.log(imageDisable);
-    imageDisable ^= 1;
-} */
+var totalButton = document.querySelectorAll("button").length;
 
-var imageDisable = true;
-document.querySelector("#button1").addEventListener("click", function(){
-    var myVar = document.querySelector("#button1");
-    var imgTag = document.querySelector("img");
-    if (imageDisable == true) {
-        imgTag.src = "assets/sea-bird-1.jpg";
-        imgTag.alt = "Sea Bird";
-        myVar.innerHTML = "Hide Photo";
-    }
-    else {
-        imgTag.src = "#";
-        imgTag.alt = "";
-        myVar.innerHTML = "See Photo";
-    }
-    console.log(imageDisable);
-    imageDisable ^= 1;
-});
 
-// addEventSelector on text
-/* var h1Tag = document.querySelector("h1");
-var isClicked = false;
-h1Tag.addEventListener("click", function() {
-    if (isClicked == false) {
-        h1Tag.classList.add("para-style");
-    }
-    else {
-        h1Tag.classList.remove("para-style");
-    }
-    isClicked ^= true;
-}); */
+for (var i = 0; i < totalButton; i++) {
+    document.querySelectorAll("button")[i].addEventListener("click", function() {
+        var text = this.innerHTML;
+        document.querySelector("h1").innerHTML = text;
 
-var h1Tag = document.querySelector("h1");
-
-h1Tag.addEventListener("mouseover", function() {
-    h1Tag.classList.add("para-style");
-});
-
-h1Tag.addEventListener("mouseout", function() {
-    h1Tag.classList.remove("para-style");
-})
+        switch(text) {
+            case "Button - 1":
+                document.querySelector("img").src = photos[0];
+                document.querySelector("img").alt = photosName[0];
+                break;
+            case "Button - 2":
+                document.querySelector("img").src = photos[1];
+                document.querySelector("img").alt = photosName[1];
+                break;
+            case "Button - 3":
+                document.querySelector("img").src = photos[2];
+                document.querySelector("img").alt = photosName[2];
+                break;
+            case "default":
+                break;
+        }
+    });
+}
