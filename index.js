@@ -1,29 +1,12 @@
-// Arrow function with filter & map
+// startsWith(searchString, position) -> check a string starts with another string
 
-let items = [
+// endsWith(searchString, length) -> check a string ends with another string
 
-    {
-        name: "plain-rice",
-        price: 10
-    },
-    {
-        name: "Pilau",
-        price: 50
-    },
-    {
-        name: "Chicken",
-        price: 80
-    },
-    {
-        name: "Meat",
-        price: 140
-    },
-    {
-        name: "Beaf",
-        price: 60
-    }
-];
+// includes(searchString, position) -> check if a string contains another string
 
-// we can use extra fuction too
-let order = items.filter( (x) => x.price >= 80).map((y) => y.name);
-console.log(order);
+// all these methods are case sensitive
+
+const message = "Today is friday";
+console.log(message.startsWith("To", 0)); // true
+console.log(message.endsWith("day", 5)); // true
+console.log(message.includes("is", 5)); // true
