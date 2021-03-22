@@ -1,12 +1,13 @@
-// startsWith(searchString, position) -> check a string starts with another string
+/* 
+import {text, setText} from './myModule.js';
 
-// endsWith(searchString, length) -> check a string ends with another string
+console.log(text);
+setText("Text changed");
+console.log(text);
+*/
 
-// includes(searchString, position) -> check if a string contains another string
+import * as T from './myModule.js';
 
-// all these methods are case sensitive
-
-const message = "Today is friday";
-console.log(message.startsWith("To", 0)); // true
-console.log(message.endsWith("day", 5)); // true
-console.log(message.includes("is", 5)); // true
+console.log(T.text);
+T.setText("Text changed");
+console.log(T.text);
