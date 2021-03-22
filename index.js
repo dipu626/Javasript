@@ -1,34 +1,29 @@
-// Arrow function 
+// Arrow function with filter & map
 
-// Traditional function
-function display() {
-    console.log("Display 1");
-}
-display();
+let items = [
 
-// Arroow function
-const display2 = () => {
-    console.log("Display 2");
-}
-display2();
+    {
+        name: "plain-rice",
+        price: 10
+    },
+    {
+        name: "Pilau",
+        price: 50
+    },
+    {
+        name: "Chicken",
+        price: 80
+    },
+    {
+        name: "Meat",
+        price: 140
+    },
+    {
+        name: "Beaf",
+        price: 60
+    }
+];
 
-const display3 = () => console.log("Display 3");
-display3();
-
-// Traditional Function
-function message1() {
-    return "Message 1";
-}
-console.log(message1());
-
-const message2 = () => "Message 2";
-console.log(message2());
-
-// Parameter Passing
-function add1(x, y) {
-    return x + y;
-}
-console.log(add1(5, 6));
-
-const add2 = (x, y) => x + y;
-console.log(add2(4, 5));
+// we can use extra fuction too
+let order = items.filter( (x) => x.price >= 80).map((y) => y.name);
+console.log(order);
