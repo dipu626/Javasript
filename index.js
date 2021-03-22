@@ -1,13 +1,27 @@
-/* 
-import {text, setText} from './myModule.js';
 
-console.log(text);
-setText("Text changed");
-console.log(text);
-*/
+class Student {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    set setId(id) {
+        this.id = id;
+    }
+    set setName(name) {
+        this.name = name;
+    }
+    get getId() {
+        return this.id;
+    }
+    get getName() {
+        return this.name;
+    }
+}
 
-import * as T from './myModule.js';
-
-console.log(T.text);
-T.setText("Text changed");
-console.log(T.text);
+let s1 = new Student(101, "dipu");
+let s2 = new Student(102, "akash");
+console.log(s1);
+console.log(s2);
+s2.setName = "bla";
+console.log(s1.getName);
+console.log(s2);
