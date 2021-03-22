@@ -1,19 +1,18 @@
-// for..of
+// for and forEach
 
-/* const names = ['s1', 's2', 's3'];
-for (let name of names) {
-    console.log(name);
-} */
+let arr = [10, 20, 30, 40, 50];
+let sqarr = [];
+arr.forEach(function(x) {
+    console.log(x);
+    sqarr.push(x * x);
+});
 
-// for...in
+console.log(sqarr);
 
-let student = {
-    id: "1306026",
-    name : "Dipu",
-    cgpa: "3.34",
-    dept: "CSE"
-}
-
-for (let x in student) {
-    console.log(x + ": " + student[x]);
-}
+// update array
+let numbers = [1, 2, 3, 4, 5];
+console.log(numbers);
+numbers.forEach(function(x, index, arr) {
+    arr[index] = x + 10;
+});
+console.log(numbers);
