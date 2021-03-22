@@ -1,34 +1,42 @@
-// find(callback, value) return the value of the first element that passes certain condition
-// findIndex(callback, value) return the index of the first element that passes certain condition
+// Array Destructure
 
-let numbers = [5, 55, 14, 5, 78];
+let numbers = [1, 2, 3, 4, 5];
+let [num1, num2, ...z] = numbers
+console.log(num1);
+console.log(num2);
+console.log(z);
 
-let firstEvenNumber = numbers.find((x, index, arr) => {
-    return x % 11 === 0;
-});
-console.log(firstEvenNumber);
+// swap variables
+let a = 10;
+let b = 20;
+[a, b] = [b, a]
+console.log(`a=${a} b=${b}`);
 
-let firstEvenNumberIndex = numbers.findIndex(x => x % 3 === 0);
-console.log(`first even number index = ${firstEvenNumberIndex}`);
+// object destructure
+const studentInfo = {
+    id: 101,
+    fullName: "dipu kumar",
+    gpa: 3.34
+}
+const {id, fullName} = studentInfo;
+console.log(`${id} ${fullName}`);
 
-let students = [
-    {
-        id: 101,
-        gpa: 2.5
-    },
-    {
-        id: 102,
-        gpa: 3.5
-    },
-    {
-        id: 104,
-        gpa: 4.5
-    },
-    {
-        id: 110,
-        gpa: 5.0
+// nested object destructure
+const student = {
+    id: 101,
+    name: "dipu kumar",
+    gpa: 3.34,
+    languages: {
+        native: "bangla",
+        beginner: "english"
     }
-];
+}
+const {name, languages} = student;
+const {native, beginner} = languages;
+console.log(name + " | " + native + ", " + beginner);
 
-let firstGpaGreaterThan4 = students.find(x => (x.gpa > 5));
-console.log(firstGpaGreaterThan4);
+// destructing function parameter
+let studentInformation = ({id, fullName}) => {
+    console.log(`funtion = ${id} ${fullName}`);
+}
+studentInformation(studentInfo);
