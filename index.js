@@ -1,20 +1,23 @@
+// Variable declaration
 
-var canvasTag = document.getElementById("canvas-1");
-var ctx = canvasTag.getContext("2d");
+/* let x = 10;
+if (true) {
+    let x = 9;
+    console.log("if=" + x);
+}
+console.log(x);
+ */
 
-ctx.lineWidth = "3";
-ctx.strokeStyle = "purple";
-ctx.strokeRect(10, 10, 380, 280);
+/* let x = 10;
+let y = 20;
+let sum = x + y;
+console.log(`sum = ${sum}. Thank you.`);
 
-ctx.fillStyle = "green";
-ctx.fillRect(13, 13, 374, 274);
-
-var centerX = canvasTag.width / 2;
-var centerY = canvasTag.height / 2;
-
-ctx.beginPath();
-ctx.arc(centerX, centerY, 80, 0, 2 * Math.PI, false);
-ctx.fillStyle = "red";
-ctx.fill();
-ctx.lineWidth = "1";
-ctx.stroke();
+let name = "Dipu";
+let message = "Welcome";
+console.log(`${message} to javascript ${name}`);
+ */
+const add = (x, y) => {
+    console.log(`sum = ${x + y}`);
+}
+add(40, 12);
