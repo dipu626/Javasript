@@ -15,49 +15,59 @@ There are some ways to make it synchronus in ES6. They are
     2.5 Promise chaining
 */
 
-console.log("welcome");
+// Promise Chain
 
-// how to create a promise
-// 3 stage -> pending, resolve, reject
-const promise1 = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        let completedPromise = true;
-        if (completedPromise === true) {
-            resolve("Completed promise 1");
-        }
-        else {
-            reject(new Error("not completed promise 1"));
-        }
-    }, 3000);
-});
+const taskOne = () => {
+    return new Promise((resolve, reject) => {
+        resolve("task 1 is completed");
+    })
+};
 
-const promise2 = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve("completed promise 2");
-    }, 1000);
-});
+const taskTwo = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("task 2 is completed");
+        }, 2000);
+    })
+};
 
-//console.log(promise1);
-/* promise1.then((message) => {
-    console.log(message);
-}).catch((error) => {
-    console.log(error);
-});
+const taskThree = () => {
+    return new Promise((resolve, reject) => {
+        resolve("task 3 is completed");
+    })
+};
 
-promise2.then((message) => {
-    console.log(message);
-}) */
+const taskFour = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("task 4 is completed");
+        }, 4000);
+    })
+};
 
-/* Promise.all([promise1, promise2]).then((res) => {
-    console.log(res);
-}).catch((error) => {
-    console.log(error);
-}) */
+const taskFive = () => {
+    return new Promise((resolve, reject) => {
+        resolve("task 5 is completed");
+    })
+};
 
-Promise.race([promise1, promise2]).then((res) => {
-    console.log(res);
-}).catch((error) => {
-    console.log(error);
-})
+const taskSix = () => {
+    return new Promise((resolve, reject) => {
+        resolve("task 6 is completed");
+    })
+};
 
-console.log("bye");
+// create promise chain
+taskOne()
+    .then((res) => console.log(res))
+    .then(taskTwo)
+    .then((res) => console.log(res))
+    .then(taskThree)
+    .then((res) => console.log(res))
+    .then(taskFour)
+    .then((res) => console.log(res))
+    .then(taskFive)
+    .then((res) => console.log(res))
+    .then(taskSix)
+    .then((res) => console.log(res))
+    .catch((res) => console.log(res))
