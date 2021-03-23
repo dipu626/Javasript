@@ -20,17 +20,21 @@ console.log("welcome");
 // how to create a promise
 // 3 stage -> pending, resolve, reject
 const promise1 = new Promise((resolve, reject) => {
-    let completedPromise = false;
-    if (completedPromise === true) {
-        resolve("Completed promise 1");
-    }
-    else {
-        reject(new Error("not completed promise 1"));
-    }
+    setTimeout(() => {
+        let completedPromise = true;
+        if (completedPromise === true) {
+            resolve("Completed promise 1");
+        }
+        else {
+            reject(new Error("not completed promise 1"));
+        }
+    }, 3000);
 });
 
 const promise2 = new Promise((resolve, reject) => {
-    resolve("completed promise 2");
+    setTimeout(() => {
+        resolve("completed promise 2");
+    }, 1000);
 });
 
 //console.log(promise1);
@@ -44,7 +48,13 @@ promise2.then((message) => {
     console.log(message);
 }) */
 
-Promise.all([promise1, promise2]).then((res) => {
+/* Promise.all([promise1, promise2]).then((res) => {
+    console.log(res);
+}).catch((error) => {
+    console.log(error);
+}) */
+
+Promise.race([promise1, promise2]).then((res) => {
     console.log(res);
 }).catch((error) => {
     console.log(error);
