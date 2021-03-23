@@ -6,16 +6,7 @@ There are some ways to make it synchronus in ES6. They are
     3. async-await method
 */
 
-/*
-2. Promise method
-    2.1 How to create a promise
-    2.2 How to use a promise
-    2.3 How to run multiple promise - all()
-    2.4 race()
-    2.5 Promise chaining
-*/
-
-// Promise Chain
+// async-await method
 
 const taskOne = () => {
     return new Promise((resolve, reject) => {
@@ -57,7 +48,7 @@ const taskSix = () => {
     })
 };
 
-// create promise chain
+/* // create promise chain
 taskOne()
     .then((res) => console.log(res))
     .then(taskTwo)
@@ -70,4 +61,20 @@ taskOne()
     .then((res) => console.log(res))
     .then(taskSix)
     .then((res) => console.log(res))
-    .catch((res) => console.log(res))
+    .catch((res) => console.log(res)) */
+
+const callAllTasks = async () => {
+    const task1 = await taskOne();
+    console.log(task1);
+    const task2 = await taskTwo();
+    console.log(task2);
+    const task3 = await taskThree();
+    console.log(task3);
+    const task4 = await taskFour();
+    console.log(task4);
+    const task5 = await taskFive();
+    console.log(task5);
+    const task6 = await taskSix();
+    console.log(task6);
+}
+callAllTasks();
